@@ -1,1 +1,1 @@
-rd /s /q c:\automation
+rd c:\automation /s /q 
