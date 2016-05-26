@@ -1,6 +1,6 @@
 ' kick off the execution
 Set WshShell = CreateObject("WScript.Shell")
-WshShell.Run "C:\Users\kgrandhi\Desktop\cmd.bat",,false
+WshShell.Run "C:\quicken_build_job\cmd.bat",,false
 
 ' wait for some time to start silktest and put somevalue inside it...
 WScript.Sleep 1000*100
