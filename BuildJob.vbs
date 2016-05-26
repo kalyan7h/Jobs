@@ -61,7 +61,7 @@ rpmInstallPath = destinationPath & "\Disk1\setup.exe /s"
 WshShell.Run rpmInstallPath,,false
 
 'wait for some 3 mins, hoping installation wont take more than 3 mins..
-Wscript.Sleep 2*60*1000
+Wscript.Sleep 1*60*1000
 
 ' see qw.exe running in the process even after installation, kill the process
 On Error Resume Next
