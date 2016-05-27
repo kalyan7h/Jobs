@@ -40,7 +40,7 @@ WshShell.Run "c:\quicken_build_job\copy.bat " &sourcePath & " " &destinationPath
 
 ' Verify whether the file copied successfully or not
 Wscript.Echo "kalyan"
-Wscript.Sleep 0.1*60*1000
+Wscript.Sleep 0.5*60*1000
 Set destinationFolder = FSO2.GetFolder(destinationPath)
 Wscript.Echo destinationFolder.Size
 objLogFile.WriteLine "Size of the source folder to copy " & sourceFolder.Size/1024/1024 &"MB"
