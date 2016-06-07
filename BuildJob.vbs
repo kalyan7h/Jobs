@@ -1,4 +1,5 @@
-Dim FSO, FSO2
+Dim FSO, FSO2, logFolderPath, logFolder
+logFolderPath = "c:\log"
 Set FSO = CreateObject("Scripting.FileSystemObject")
 Set FSO2 = CreateObject("Scripting.FileSystemObject")
 version = Wscript.Arguments(0)
@@ -14,6 +15,9 @@ destinationPath = "c:\X"
 ' Write into a log file
 Set objFSO=CreateObject("Scripting.FileSystemObject")
 writeLog = "c:\log\buildjob.inf"
+If Not objFSO.FolderExists(logFolderPath) Then
+	Set logFolder = objFSO.CreateFolder(logFolderPath)
+End If	
 set objLogFile = objFSO.CreateTextFile(writeLog,True)
 
 ' verify SourceFolder exists or not..

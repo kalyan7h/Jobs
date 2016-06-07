@@ -1,4 +1,5 @@
-Dim FSO, FSO2
+Dim FSO, FSO2, logFolderPath, logFolder
+logFolderPath = "c:\log"
 Set FSO = CreateObject("Scripting.FileSystemObject")
 Set FSO2 = CreateObject("Scripting.FileSystemObject")
 Set WshShell = CreateObject("WScript.Shell")
@@ -8,7 +9,11 @@ destinationPath = "c:\automation"
 ' Write into a log file
 Set objFSO=CreateObject("Scripting.FileSystemObject")
 writeLog = "c:\log\automation_setup_job.inf"
+If Not objFSO.FolderExists(logFolderPath) Then
+	Set logFolder = objFSO.CreateFolder(logFolderPath)
+End If	
 set objLogFile = objFSO.CreateTextFile(writeLog,True)
+
 
 ' verify SourceFolder exists or not..
 If FSO.FolderExists(sourcePath) Then
