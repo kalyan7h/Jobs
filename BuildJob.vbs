@@ -4,6 +4,11 @@ Set FSO = CreateObject("Scripting.FileSystemObject")
 Set FSO2 = CreateObject("Scripting.FileSystemObject")
 version = Wscript.Arguments(0)
 build=Wscript.Arguments(1)
+Set WshShell = CreateObject("WScript.Shell")
+
+' Set the script engine to cscript
+WshShell.Run "cscript.exe //H:cscript"
+Wscript.Echo "------------------------------------------------------------------"
 Wscript.Echo version
 Wscript.Echo build
 
@@ -60,7 +65,6 @@ End If
 
 ' Copy successful, Instal quicken in the silent mode
 objLogFile.WriteLine "Quicken Installation Started.."
-Set WshShell = CreateObject("WScript.Shell")
 rpmInstallPath = destinationPath & "\Disk1\setup.exe /s"
 WshShell.Run rpmInstallPath,,false
 
@@ -73,6 +77,6 @@ WshShell.Run "taskkill /f /im qw.exe",,false
 objLogFile.WriteLine "Quicken Installation completed.."
 On Error GoTo 0
 
-'WScript.Echo r
+Wscript.Echo "------------------------------------------------------------------"
 objLogFile.Close
 

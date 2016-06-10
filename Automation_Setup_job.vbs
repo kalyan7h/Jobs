@@ -6,6 +6,10 @@ Set WshShell = CreateObject("WScript.Shell")
 sourcePath = "c:\Latest\automation"
 destinationPath = "c:\automation"
 
+' Set the script engine to cscript
+WshShell.Run "cscript.exe //H:cscript"
+Wscript.Echo "------------------------------------------------------------------"
+
 ' Write into a log file
 Set objFSO=CreateObject("Scripting.FileSystemObject")
 writeLog = "c:\log\automation_setup_job.inf"
@@ -18,11 +22,11 @@ set objLogFile = objFSO.CreateTextFile(writeLog,True)
 ' verify SourceFolder exists or not..
 If FSO.FolderExists(sourcePath) Then
 	objLogFile.WriteLine "Automation Source folder Exists"
-	WScript.Echo "Source Folder Exists"
+	WScript.Echo "Automation Source folder Exists"
 Else
 	
-	WScript.Echo "Source Folder Does not Exists"
-	objLogFile.WriteLine "Error***: Source Folder Does not Exists ->> " & sourcePath
+	WScript.Echo "Error~~~: Source Folder Does not Exists ->> " & sourcePath
+	objLogFile.WriteLine "Error~~~: Source Folder Does not Exists ->> " & sourcePath
 	objLogFile.Close
 	WScript.quit
 End If
@@ -44,23 +48,25 @@ Set sourceFolder = FSO.GetFolder(sourcePath)
 WshShell.Run "c:\quicken_build_job\copy.bat " &sourcePath & " " &destinationPath,,true
 
 ' Verify whether the file copied successfully or not
-Wscript.Echo "kalyan"
-Wscript.Sleep 0.5*60*1000
+Wscript.Echo "Sleep for 48 Secs.."
+Wscript.Sleep 0.8*60*1000
 Set destinationFolder = FSO2.GetFolder(destinationPath)
-Wscript.Echo destinationFolder.Size
+Wscript.Echo "Size of the source folder to copy " & sourceFolder.Size/1024/1024 &"MB"
+Wscript.Echo "Size of the destination folder to copy " & destinationFolder.Size/1024/1024 &"MB"
 objLogFile.WriteLine "Size of the source folder to copy " & sourceFolder.Size/1024/1024 &"MB"
 objLogFile.WriteLine "Size of the destinationFolder copied- " & destinationFolder.Size/1024/1024 &"MB"
 'WScript.Echo destinationFolder.Size/1024/1024 &"MB"
 
 if (CInt(sourceFolder.Size/1024/1024) = CInt(destinationFolder.Size/1024/1024)) Then
-	WScript.Echo "Build Copied Successfully"
-	objLogFile.WriteLine "Build Copied Successfully to "& destinationPath
+	WScript.Echo "Automation Script folder Copied Successfully"
+	objLogFile.WriteLine "Automation Script folder Copied Successfully to "& destinationPath
 Else
-	WScript.Echo "Copy Failed ... :-("
-	objLogFile.WriteLine "Error***: Copy Failed ... :-("
+	WScript.Echo "Error~~~: Automation Folder Copy Failed ... :-("
+	objLogFile.WriteLine "Error~~~: Automation Folder Copy Failed ... :-("
 	objLogFile.Close
 	WScript.quit
 End If
 
 'WScript.Echo r
+Wscript.Echo "------------------------------------------------------------------"
 objLogFile.Close
