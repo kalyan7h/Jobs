@@ -7,7 +7,7 @@ build=Wscript.Arguments(1)
 Set WshShell = CreateObject("WScript.Shell")
 
 ' Set the script engine to cscript
-WshShell.Run "cscript.exe //H:cscript"
+'WshShell.Run "cscript.exe //H:cscript"
 Wscript.Echo "------------------------------------------------------------------"
 Wscript.Echo version
 Wscript.Echo build
@@ -64,12 +64,14 @@ Else
 End If
 
 ' Copy successful, Instal quicken in the silent mode
+WScript.Echo "Quicken Installation Started.."
 objLogFile.WriteLine "Quicken Installation Started.."
 rpmInstallPath = destinationPath & "\Disk1\setup.exe /s"
 WshShell.Run rpmInstallPath,,false
 
-'wait for some 3 mins, hoping installation wont take more than 3 mins..
+'wait for some 1> mins, hoping installation wont take more than 1 mins..
 Wscript.Sleep 1*60*1000
+WScript.Echo "Checking whether qw process running or not..."
 
 ' see qw.exe running in the process even after installation, kill the process
 On Error Resume Next

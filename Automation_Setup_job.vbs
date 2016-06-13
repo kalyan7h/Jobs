@@ -7,8 +7,8 @@ sourcePath = "c:\Latest\automation"
 destinationPath = "c:\automation"
 
 ' Set the script engine to cscript
-WshShell.Run "cscript.exe //H:cscript"
-Wscript.Echo "------------------------------------------------------------------"
+'WshShell.Run "cscript.exe //H:cscript"
+WScript.Echo "------------------------------------------------------------------"
 
 ' Write into a log file
 Set objFSO=CreateObject("Scripting.FileSystemObject")
@@ -48,7 +48,7 @@ Set sourceFolder = FSO.GetFolder(sourcePath)
 WshShell.Run "c:\quicken_build_job\copy.bat " &sourcePath & " " &destinationPath,,true
 
 ' Verify whether the file copied successfully or not
-Wscript.Echo "Sleep for 48 Secs.."
+Wscript.Echo "Sleep for few Secs.."
 Wscript.Sleep 0.8*60*1000
 Set destinationFolder = FSO2.GetFolder(destinationPath)
 Wscript.Echo "Size of the source folder to copy " & sourceFolder.Size/1024/1024 &"MB"
