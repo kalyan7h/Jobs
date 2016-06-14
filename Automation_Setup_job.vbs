@@ -8,12 +8,14 @@ destinationPath = "c:\automation"
 
 ' Set the script engine to cscript
 'WshShell.Run "cscript.exe //H:cscript"
-'WScript.Echo "------------------------------------------------------------------"
+WScript.Echo "------------------------------------------------------------------"
 
 'Terminate partner/runtime processes..
 On Error Resume Next
 WshShell.Run "taskkill /f /im partner.exe",,false
+Wscript.Sleep 0.2*60*1000
 WshShell.Run "taskkill /f /im runtime.exe",,false
+Wscript.Sleep 0.2*60*1000
 On Error GoTo 0
 
 ' Write into a log file
