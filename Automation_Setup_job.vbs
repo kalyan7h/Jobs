@@ -14,6 +14,8 @@ destinationPath = "c:\automation"
 On Error Resume Next
 WshShell.Run "taskkill /f /im partner.exe",,false
 Wscript.Sleep 0.2*60*1000
+WshShell.Run "taskkill /f /im agent.exe",,false
+Wscript.Sleep 0.1*60*1000
 WshShell.Run "taskkill /f /im runtime.exe",,false
 Wscript.Sleep 0.2*60*1000
 On Error GoTo 0
