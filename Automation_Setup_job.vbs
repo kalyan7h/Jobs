@@ -3,7 +3,7 @@ logFolderPath = "c:\log"
 Set FSO = CreateObject("Scripting.FileSystemObject")
 Set FSO2 = CreateObject("Scripting.FileSystemObject")
 Set WshShell = CreateObject("WScript.Shell")
-sourcePath = "c:\Latest\automation"
+sourcePath = "z:\automation"
 destinationPath = "c:\automation"
 
 ' Set the script engine to cscript
