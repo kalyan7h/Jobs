@@ -29,12 +29,12 @@ On Error GoTo 0
 
 ' Set the script engine to cscript
 'WshShell.Run "cscript.exe //H:cscript"
-Wscript.Echo "------------------------------------------------------------------"
-Wscript.Echo version
-Wscript.Echo build
+'Wscript.Echo "------------------------------------------------------------------"
+'Wscript.Echo version
+'Wscript.Echo build
 
 sourcePath = "c:\QuickenBuilds\QW"&version&"\qknty"&version&"baseinstaller-"&build&"-distribution\RPM"
-Wscript.Echo sourcePath
+'Wscript.Echo sourcePath
 'sourcePath = "C:\QuickenBuilds\25.1.4.13\RPM"
 destinationPath = "c:\X"
 
@@ -43,7 +43,7 @@ destinationPath = "c:\X"
 ' verify SourceFolder exists or not..
 If FSO.FolderExists(sourcePath) Then
 	objLogFile.WriteLine "Source folder Exists"
-	WScript.Echo "Source Folder Exists"
+	'WScript.Echo "Source Folder Exists"
 Else
 	
 	'WScript.Echo "Source Folder Does not Exists"
@@ -94,7 +94,7 @@ WshShell.Run "taskkill /f /im qw.exe",,false
 objLogFile.WriteLine "Quicken Installation completed.."
 On Error GoTo 0
 
-Wscript.Echo "------------------------------------------------------------------"
+'Wscript.Echo "------------------------------------------------------------------"
 objLogFile.Close
 WScript.quit
 

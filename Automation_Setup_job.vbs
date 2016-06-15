@@ -8,7 +8,7 @@ destinationPath = "c:\automation"
 
 ' Set the script engine to cscript
 'WshShell.Run "cscript.exe //H:cscript"
-WScript.Echo "------------------------------------------------------------------"
+'WScript.Echo "------------------------------------------------------------------"
 
 'Terminate partner/runtime processes..
 On Error Resume Next
