@@ -70,9 +70,9 @@ if (CInt(sourceFolder.Size/1024/1024) = CInt(destinationFolder.Size/1024/1024)) 
 	objLogFile.WriteLine "Automation Script folder Copied Successfully to "& destinationPath
 Else
 	'WScript.Echo "Error~~~: Automation Folder Copy Failed ... :-("
-	objLogFile.WriteLine "Error~~~: Automation Folder Copy Failed ... :-("
-	objLogFile.Close
-	WScript.quit(1)
+	objLogFile.WriteLine "Error~~~: Automation Folder Copy Failed ... :-( but still continuing"
+	'objLogFile.Close
+	'WScript.quit(1)
 End If
 
 'WScript.Echo r
