@@ -15,8 +15,8 @@ for iCount = 1 to 16 step 1
 	objFile.close
 	
 	bKillSilk = StrComp(Trim(Mid(strContents,1,4)),"Done",1)
-	Wscript.Echo bKillSilk
-	Wscript.Echo "["&Mid(strContents,1,4)&"]"
+	'Wscript.Echo bKillSilk
+	'Wscript.Echo "["&Mid(strContents,1,4)&"]"
 	
 	if bKillSilk = 0 Then
 		' kill silk process, execution is over
