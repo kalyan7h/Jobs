@@ -9,6 +9,9 @@ Else
 	WScript.quit(1)
 End If
 
+WScript.Echo "Master . vbs"
+Wscript.Echo version &" "&build&" "&scriptFile
+
 Set objWSHShell = CreateObject("Shell.Application")
 
 'variables
@@ -31,8 +34,14 @@ End Select
 'Install Quicken
 objWSHShell.ShellExecute "cscript.exe", Chr(34) & Chr(34) & "C:\quicken_build_job\BuildJob.vbs" & Chr(32) & version &" "&build, "", "runas", 1 
 
+WScript.Echo "check Quicken Installation completed or not...."
+
 ' Get automation code
 objWSHShell.ShellExecute "cscript.exe", Chr(34) & Chr(34) & "C:\quicken_build_job\Automation_Setup_job.vbs", "", "runas", 1 
 
+WScript.Echo "check Automation setup completed or not...."
+
 ' Execute the silktest script
 objWSHShell.ShellExecute "cscript.exe", Chr(34) & Chr(34) & "C:\quicken_build_job\Silk_Execution_Controller.vbs" & Chr(32) & filePath, "", "runas", 1
+
+WScript.quit
