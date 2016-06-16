@@ -79,5 +79,6 @@ End If
 
 'WScript.Echo r
 'Wscript.Echo "------------------------------------------------------------------"
+objLogFile.WriteLine "Automation Setup Completed.."
 objLogFile.Close
 WScript.quit

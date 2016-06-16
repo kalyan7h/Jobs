@@ -95,6 +95,7 @@ objLogFile.WriteLine "Quicken Installation completed.."
 On Error GoTo 0
 
 'Wscript.Echo "------------------------------------------------------------------"
+objLogFile.WriteLine "Quicken Installation completed"
 objLogFile.Close
 WScript.quit
 

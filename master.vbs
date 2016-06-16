@@ -12,7 +12,8 @@ End If
 WScript.Echo "Master . vbs"
 Wscript.Echo version &" "&build&" "&scriptFile
 
-Set objWSHShell = CreateObject("Shell.Application")
+'Set objWSHShell = CreateObject("Shell.Application")
+Set WshShell = CreateObject("WScript.Shell")
 
 'variables
 globalFolderPath = "C:\automation\ApplicationSpecific\Scripts\Global\"
@@ -32,16 +33,21 @@ End Select
 
 
 'Install Quicken
-objWSHShell.ShellExecute "cscript.exe", Chr(34) & Chr(34) & "C:\quicken_build_job\BuildJob.vbs" & Chr(32) & version &" "&build, "", "runas", 1 
+'objWSHShell.ShellExecute "cscript.exe", Chr(34) & Chr(34) & "C:\quicken_build_job\BuildJob.vbs" & Chr(32) & version &" "&build, "", "runas", 1 
+WshShell.Run "C:\quicken_build_job\BuildJob.vbs "& version &" "&build,,true
 
 WScript.Echo "check Quicken Installation completed or not...."
 
 ' Get automation code
-objWSHShell.ShellExecute "cscript.exe", Chr(34) & Chr(34) & "C:\quicken_build_job\Automation_Setup_job.vbs", "", "runas", 1 
+'objWSHShell.ShellExecute "cscript.exe", Chr(34) & Chr(34) & "C:\quicken_build_job\Automation_Setup_job.vbs", "", "runas", 1 
+WshShell.Run "C:\quicken_build_job\Automation_Setup_job.vbs",,true
 
 WScript.Echo "check Automation setup completed or not...."
 
 ' Execute the silktest script
-objWSHShell.ShellExecute "cscript.exe", Chr(34) & Chr(34) & "C:\quicken_build_job\Silk_Execution_Controller.vbs" & Chr(32) & filePath, "", "runas", 1
+'objWSHShell.ShellExecute "cscript.exe", Chr(34) & Chr(34) & "C:\quicken_build_job\Silk_Execution_Controller.vbs" & Chr(32) & filePath, "", "runas", 1
+WshShell.Run "C:\quicken_build_job\Silk_Execution_Controller.vbs " &filePath,,true
+
+WScript.Echo "is Exec completed??"
 
 WScript.quit
