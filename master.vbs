@@ -17,7 +17,7 @@ Set WshShell = CreateObject("WScript.Shell")
 
 'variables
 globalFolderPath = "C:\automation\ApplicationSpecific\Scripts\Global\"
-regressionFolderPath = "C:\Latest\automation\ApplicationSpecific\Scripts\Regression\"
+regressionFolderPath = "C:\automation\ApplicationSpecific\Scripts\Regression\"
 
 Select case scriptFile
 	case "SmokeQuicken.t"
