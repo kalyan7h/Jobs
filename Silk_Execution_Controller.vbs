@@ -1,12 +1,12 @@
 suiteFilePathToBeExecuted =  Wscript.Arguments(0)
 
-Wscript.Echo "Silk_Exec_Controller.vbs"
-Wscript.Echo suiteFilePathToBeExecuted
+'Wscript.Echo "Silk_Exec_Controller.vbs"
+'Wscript.Echo suiteFilePathToBeExecuted
 
 ' kick off the execution
 Set WshShell = CreateObject("WScript.Shell")
 WshShell.Run "C:\quicken_build_job\invokeSilkTestAndExecute.bat "&suiteFilePathToBeExecuted,,false
-Wscript.Echo "is silk running??"
+'Wscript.Echo "is silk running??"
 
 ' wait for some time to start silktest and put somevalue inside it...
 WScript.Sleep 1000*100
