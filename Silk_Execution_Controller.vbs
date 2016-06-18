@@ -8,12 +8,12 @@ Set WshShell = CreateObject("WScript.Shell")
 WshShell.Run "C:\quicken_build_job\invokeSilkTestAndExecute.bat "&suiteFilePathToBeExecuted,,false
 'Wscript.Echo "is silk running??"
 
-' wait for some time to start silktest and put somevalue inside it...
-WScript.Sleep 1000*100
+' wait for some time (150 secs) to start silktest and put somevalue inside stopper value...
+WScript.Sleep 1000*150
 
 
 ' wait for 4 hours max, if execution ends before look for the flag and teriminate silktest
-for iCount = 1 to 16 step 1 
+for iCount = 1 to 17 step 1 
 	Set objFSO = CreateObject("Scripting.FileSystemObject")
 	Set objFile = objFSO.OpenTextFile("C:\automation\stopper.txt", 1)
 	strContents = objFile.ReadAll

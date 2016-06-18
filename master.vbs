@@ -82,4 +82,7 @@ WshShell.Run "C:\quicken_build_job\Automation_Setup_job.vbs",,true
 'objWSHShell.ShellExecute "cscript.exe", Chr(34) & Chr(34) & "C:\quicken_build_job\Silk_Execution_Controller.vbs" & Chr(32) & filePath, "", "runas", 1
 WshShell.Run "C:\quicken_build_job\Silk_Execution_Controller.vbs " &filePath,,true
 
+' copy results & logs from local archive folder in Z:
+WshShell.Run "C:\quicken_build_job\Archive_Results_Logs.vbs",,true
+
 WScript.quit
