@@ -39,3 +39,6 @@ WshShell.Run "xcopy c:\Results "&filepath &" /e /y"
 
 'copy logs
 WshShell.Run "xcopy c:\log "&filepath &" /e /y"
+
+' clean-up - clear the local result folder 
+objFSO.DeleteFile("c:\Results\*"), TRUE
