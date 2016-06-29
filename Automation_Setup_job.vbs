@@ -28,6 +28,11 @@ If Not objFSO.FolderExists(logFolderPath) Then
 End If	
 set objLogFile = objFSO.CreateTextFile(writeLog,True)
 
+' create Results folder if not exists
+If Not objFSO.FolderExists("c:\Results") Then
+	Set resFolder = objFSO.CreateFolder("c:\Results")
+End If
+
 
 ' verify SourceFolder exists or not..
 If FSO.FolderExists(sourcePath) Then
