@@ -32,13 +32,16 @@ filePath = "z:\Results_Archive\"&sYear&"\"&sMonth&"\"&sDate&"\"&currentTime
 
 If Not objFSO.FolderExists(filePath) Then
 	 Set archiveFolder = objFSO.CreateFolder(filePath)
+	 Wscript.Sleep 0.2*60*1000
 End If
 
 'copy results file to the shared location
 WshShell.Run "xcopy c:\Results "&filepath &" /e /y"
+Wscript.Sleep 0.2*60*1000
 
 'copy logs
 WshShell.Run "xcopy c:\log "&filepath &" /e /y"
+Wscript.Sleep 0.2*60*1000
 
 ' clean-up - clear the local result folder 
 objFSO.DeleteFile("c:\Results\*"), TRUE
