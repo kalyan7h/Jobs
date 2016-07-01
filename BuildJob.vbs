@@ -33,7 +33,8 @@ On Error GoTo 0
 'Wscript.Echo version
 'Wscript.Echo build
 
-sourcePath = "z:\QuickenBuilds\QW"&version&"\qknty"&version&"baseinstaller-"&build&"-distribution\RPM"
+'sourcePath = "z:\QuickenBuilds\QW"&version&"\qknty"&version&"baseinstaller-"&build&"-distribution\RPM"
+sourcePath = "y:\QW"&version&"\qknty"&version&"baseinstaller-"&build&"-distribution\RPM"
 'Wscript.Echo sourcePath
 'sourcePath = "C:\QuickenBuilds\25.1.4.13\RPM"
 destinationPath = "c:\X"
@@ -95,7 +96,6 @@ objLogFile.WriteLine "Quicken Installation completed.."
 On Error GoTo 0
 
 'Wscript.Echo "------------------------------------------------------------------"
-objLogFile.WriteLine "Quicken Installation completed"
 objLogFile.Close
 WScript.quit
 
