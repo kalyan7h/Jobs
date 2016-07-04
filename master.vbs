@@ -64,6 +64,8 @@ Select case scriptFile
 		filePath = regressionFolderPath&"SpendingTab\SpendingTab.t"
 	case "RentalProperty.t"
 		filePath = regressionFolderPath&"RPM\RentalProperty.t"
+	case "SyncTest.t"
+		filePath = regressionFolderPath&"QDSync\SyncTest.t"
 	case else
 		WScript.Echo "Invalid ScriptFile Name - "&scriptFile
 		WScript.quit(1)
