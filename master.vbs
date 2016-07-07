@@ -116,7 +116,7 @@ WshShell.Run "C:\quicken_build_job\BuildJob.vbs "& version &" "&build,,true
 
 ' Get automation code
 'objWSHShell.ShellExecute "cscript.exe", Chr(34) & Chr(34) & "C:\quicken_build_job\Automation_Setup_job.vbs", "", "runas", 1 
-WshShell.Run "C:\quicken_build_job\Automation_Setup_job.vbs",,true
+WshShell.Run "C:\quicken_build_job\Automation_Setup_job.vbs "& version,,true
 
 ' Execute the silktest script
 'objWSHShell.ShellExecute "cscript.exe", Chr(34) & Chr(34) & "C:\quicken_build_job\Silk_Execution_Controller.vbs" & Chr(32) & filePath, "", "runas", 1

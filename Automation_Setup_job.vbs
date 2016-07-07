@@ -1,9 +1,12 @@
+
+version = Wscript.Arguments(0)
 Dim FSO, FSO2, logFolderPath, logFolder
 logFolderPath = "c:\log"
 Set FSO = CreateObject("Scripting.FileSystemObject")
 Set FSO2 = CreateObject("Scripting.FileSystemObject")
 Set WshShell = CreateObject("WScript.Shell")
-sourcePath = "z:\automation"
+'sourcePath = "z:\automation"
+sourcePath="z:\Quicken_20"&version
 destinationPath = "c:\automation"
 
 ' Set the script engine to cscript
