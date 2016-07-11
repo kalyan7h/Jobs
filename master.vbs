@@ -109,6 +109,8 @@ Select case scriptFile
 		WScript.quit(1)
 End Select
 
+'uninstall Quicken
+WshShell.Run "C:\quicken_build_job\UninstallQuicken.vbs",,true
 
 'Install Quicken
 'objWSHShell.ShellExecute "cscript.exe", Chr(34) & Chr(34) & "C:\quicken_build_job\BuildJob.vbs" & Chr(32) & version &" "&build, "", "runas", 1 
