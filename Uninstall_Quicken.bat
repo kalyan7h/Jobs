@@ -24,5 +24,9 @@ TIMEOUT 2
 rd %3 /s /q 
 TIMEOUT 2
 
+cd c:\Users\Public\Desktop
+del Quicken*.lnk
+TIMEOUT 2
+
 
 
