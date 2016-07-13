@@ -43,5 +43,8 @@ Wscript.Sleep 0.2*60*1000
 WshShell.Run "xcopy c:\log "&filepath &" /e /y"
 Wscript.Sleep 0.2*60*1000
 
-' clean-up - clear the local result folder 
+' clean-up - clear the local result folder
+On Error Resume Next
 objFSO.DeleteFile("c:\Results\*"), TRUE
+On Error GoTo 0
+WScript.quit
