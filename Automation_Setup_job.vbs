@@ -6,7 +6,7 @@ Set FSO = CreateObject("Scripting.FileSystemObject")
 Set FSO2 = CreateObject("Scripting.FileSystemObject")
 Set WshShell = CreateObject("WScript.Shell")
 'sourcePath = "z:\automation"
-sourcePath="z:\Quicken_20"&version
+sourcePath="Z:\Perforce\perforce\Quicken_20"&version
 destinationPath = "c:\automation"
 
 ' Set the script engine to cscript
@@ -84,6 +84,10 @@ Else
 	'objLogFile.Close
 	'WScript.quit(1)
 End If
+
+' code is copied, run the command to keep all the files under automation folder in WRITE mode
+WshShell.Run "attrib -r C:\automation\*.* /s",,true
+Wscript.Sleep 0.1*60*1000
 
 'WScript.Echo r
 'Wscript.Echo "------------------------------------------------------------------"
